@@ -1,6 +1,6 @@
 # DictionaryApp
 
-DictionaryApp is an Android dictionary application built with Kotlin and Java-based Android tooling. It searches word meanings, falls back to slang definitions when needed, supports translation, stores search history locally, and includes text-to-speech playback.
+DictionaryApp is an Android dictionary application built with Kotlin and Android Jetpack components. It searches word meanings, falls back to slang definitions when needed, supports translation, stores search history locally, and includes text-to-speech playback.
 
 ## Features
 
@@ -44,7 +44,7 @@ app/src/main/res/
 
 ## Getting Started
 
-1. Open the project in Android Studio.
+1. Clone the repository and open it in Android Studio. Configure your own Android SDK location in `local.properties`; do not reuse another developer's SDK path.
 2. Let Gradle sync the project dependencies.
 3. Select an emulator or Android device running API 24 or newer.
 4. Run the `app` configuration.
@@ -68,6 +68,10 @@ The debug APK is generated under:
 ```text
 app/build/outputs/apk/debug/
 ```
+
+## Service limitations
+
+Definition, slang, and translation lookups require network access. Provider availability and translation endpoint requirements can change; verify the configured endpoints in `network/RetrofitClient.kt` for your deployment. Local history remains separate from remote lookup services.
 
 ## External APIs
 
